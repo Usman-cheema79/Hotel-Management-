@@ -5,7 +5,7 @@ import { HotelContext } from '../../context/HotelContext';
 const OffersAndPackages = () => {
     const [expandedIndex, setExpandedIndex] = useState(null);
     const { formData } = useContext(HotelContext);
-    const offers = formData?.hotelProfile.offerPackage || []; // Safe check for offers array
+    const offers = formData?.offerPackage || []; 
 
     const toggleExpand = (index) => {
         setExpandedIndex(expandedIndex === index ? null : index);
