@@ -1,4 +1,3 @@
-
 // Navbar.js
 import React, { useState, useContext, useEffect } from "react";
 import bell from "../assets/pics/notifications.svg";
@@ -12,7 +11,7 @@ import { useNavigate } from "react-router-dom";
 import logo from '../assets/pics/logoMain.svg';
 import { Link } from 'react-router-dom'; // Ensure you have the correct path to Link if using React Router
 
-const Navbar = () => {
+const Navbar = ({toggleSidebar}) => {
   const navigate = useNavigate();
   const { formData, setFormData } = useContext(HotelContext);
   const user = useAuth();
@@ -44,7 +43,7 @@ const Navbar = () => {
       {/* Sidebar Toggle Button (Visible only on mobile) */}
       <div className="lg:hidden flex gap-2 items-center ">
         <button
-          // onClick={toggleSidebar}
+          onClick={toggleSidebar}
           className=" text-primary"
         >
           <svg
@@ -79,15 +78,21 @@ const Navbar = () => {
       <div className="flex items-center space-x-4 pr-4">
         <div className="relative">
           <span className="absolute right-0 bottom-0 h-2 w-2 bg-red-600 rounded-full"></span>
+          {/* <Link to={"/user-Profile"}> */}
           <img src={bell} alt="Notifications" className="h-6 w-6" />
+          {/* </Link> */}
         </div>
+        <Link to={"/user-Profile"}>
         <div className="flex items-center space-x-2">
           <img src={profile} alt="User" className="h-8 w-8 rounded-full" />
           <div className="flex flex-col">
             <span className="text-sm font-semibold">Jane Aly</span>
             <span className="text-xs text-gray-500">Admin</span>
+          
           </div>
         </div>
+        </Link>
+
         <div>
           <img
             src={chevron_down}

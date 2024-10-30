@@ -26,13 +26,13 @@ export default function DashboardBody(props) {
     !HotelProfileInprogress && !HotelProfileICompleted
       ? { backgroundColor: "#FFF6E6", border: "1px solid #FFDC99" }
       : HotelProfileICompleted
-        ? { backgroundColor: "#d0e8e8", border: "1px solid #27C2B0" }
-        : { backgroundColor: "white" };
+      ? { backgroundColor: "#d0e8e8", border: "1px solid #27C2B0" }
+      : { backgroundColor: "white" };
   const svgFillColor = HotelProfileICompleted
     ? "#27C2B0"
     : !HotelProfileInprogress
-      ? "#F5B948"
-      : "#FFF5F5";
+    ? "#F5B948"
+    : "#FFF5F5";
   const svgStrokeColor =
     HotelProfileICompleted || !HotelProfileInprogress ? "white" : "#FE4747";
 
@@ -52,8 +52,6 @@ export default function DashboardBody(props) {
                 className="p-3 w-full rounded-lg shadow-md"
               >
                 <svg
-                  width="208"
-                  height="73"
                   viewBox="0 0 208 73"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
@@ -212,7 +210,10 @@ export default function DashboardBody(props) {
             )}
             <div className="bg-white p-3 rounded-lg w-full shadow-md">
               <img src={venuedetail} alt="" />
-              <Link to='/venu-Listing-Form' className="text-xl block lg:mt-14 lg:mb-6  font-bold mb-2">
+              <Link
+                to="/venu-Listing-Form"
+                className="text-xl block lg:mt-14 lg:mb-6  font-bold mb-2"
+              >
                 Add Venue Details
               </Link>
             </div>
